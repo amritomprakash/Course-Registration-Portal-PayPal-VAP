@@ -1,0 +1,53 @@
+html
+    head
+        style.
+            #customers {
+            font-family: Trebuchet MS, Arial, Helvetica, sans-serif,
+            border-collapse: collapse,
+            width: 100%,
+            }
+  
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            
+            #customers tr:nth-child(even){background-color: #f2f2f2;}
+            
+            #customers tr:hover {background-color: #ddd;}
+            
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #23cad5;
+                color: white;
+            }
+            #customers button{
+                display: inline-block;
+                background: #1fb5bf;
+                border: 1px solid #1ba0a9;
+                padding: 0.5em 2em;
+                color: white;
+                margin-right: 0.5em;
+                box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+            }
+    main
+        table(id="customers" align="center")
+            tr
+                th Course Code
+                th Course Name
+                th Department
+                th Status/Register
+
+            -for(i=0;i<size;i++)
+                tr
+                    td #{id[i]}
+                    td #{name[i]}
+                    td #{department[i]}
+                    if s[i]==0
+                        td 
+                            form(method='get' action='/student/studentview/reg/'+i)
+                                button.btn(type='submit' value=i id="customers" name="register") Register
+                    else
+                        td Registered

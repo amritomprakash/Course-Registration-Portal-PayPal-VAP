@@ -1,0 +1,38 @@
+html
+    head
+        style.
+            #customers {
+            font-family: Trebuchet MS, Arial, Helvetica, sans-serif,
+            border-collapse: collapse,
+            width: 100%,
+            }
+  
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            
+            #customers tr:nth-child(even){background-color: #f2f2f2;}
+            
+            #customers tr:hover {background-color: #ddd;}
+            
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #23cad5;
+                color: white;
+            }
+    main
+        table(id="customers" align="center")
+            tr
+                th Course Code
+                th Course Name
+                th Faculty
+                th Department
+            -for(i=0;i<size;i++)
+                tr
+                    td #{id[i]}
+                    td #{name[i]}
+                    td #{faculty[i]}
+                    td #{department[i]}
